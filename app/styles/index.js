@@ -15,13 +15,18 @@ var styles = {
 		background: '#D0D3D4',
 		padding: '10px'
 
+	},
 
+	bagpao_header: {
+		display: 'block',
+	  marginLeft: 'auto',
+	  marginRight: 'auto'
 
 	},
 
 	left: {
 		textAlign: 'left'
-}
+	}
 };
 
 module.exports = styles;
