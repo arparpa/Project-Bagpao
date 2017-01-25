@@ -1,13 +1,14 @@
-var React = require('react');
-var styles = require('../styles');
+import React from 'react';
+import styles from '../styles';
+
 
 
 var CreatePlan = React.createClass({
   render: function () {
     return (
-<div className="container-fluid" style={styles.container}>
+<div className="container" style={styles.container}>
 
-  <div className="form-inline">
+  <div className="row">
 
   <div className="col-md-4" >
     <h3 style={styles.left}>From</h3>

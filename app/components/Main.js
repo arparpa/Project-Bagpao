@@ -1,6 +1,6 @@
 var React = require('react');
 
-var transparentBg = require('../styles').transparentBg;
+var styles = require('../styles');
 var Nav = require('../components/Nav');
 
 var Main = React.createClass({
@@ -9,8 +9,11 @@ var Main = React.createClass({
       <div>
 
       <Nav/>
+  <h1 className="text-center">BagPao Travel</h1>
+
       {this.props.children}
-      <h1>BagPao Travel</h1>
+
+
       </div>
     )
   }

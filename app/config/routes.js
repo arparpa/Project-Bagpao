@@ -5,11 +5,13 @@ var Route = ReactRouter.Route;
 var browserHistory = ReactRouter.browserHistory;
 var IndexRoute = ReactRouter.IndexRoute;
 var Main = require('../components/Main');
-var Home = require("../components/Home"); 
+var Home = require("../components/Home");
+var Login = require('../components/Login');
 var Trips = require('../containers/TripsCon');
 var Places = require('../containers/PlacesCon');
 var Contact = require('../containers/ContactCon');
 var Tripsearch = require('../containers/TripsearchCon');
+
 
 
 var routes = (
@@ -20,8 +22,9 @@ var routes = (
       <Route path = 'trips/:trips' header = 'Find' component = {Tripsearch}/>
       <Route path = 'places' header = 'Places' component = {Places}/>
       <Route path = 'contact' header = 'Contact Us' component = {Contact}/>
+      <Route path = 'login' header = 'Login/Sign Up' component = {Login}/>
     </Route>
   </Router>
 );
- 
+
 module.exports = routes;
