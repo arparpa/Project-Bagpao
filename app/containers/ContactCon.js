@@ -1,49 +1,58 @@
 var React = require('react');
 var styles = require('../styles');
+var Contact = require('../components/Contact');
  
 var ContactCon = React.createClass({
+
+  getInitialState: function() {
+    return {
+      message: ''
+    };
+  },
+
+  handleSubmit: function (event) {
+    event.preventDefault();
+    this.setState({ type: 'info', message: 'Sending...' }, this.sendFormData);
+  },
+
+  sendFormData: function () {
+    var formData = {
+      email: React.findDOMNode(this.refs.email).value,
+      name: React.findDOMNode(this.refs.name).value
+    };
+  },
+
+  requestBuildQueryString: function (params) {
+    var queryString = [];
+    for(var property in params)
+      if (params.hasOwnProperty(property)) {
+        queryString.push(encodeURIComponent(property) + '=' + encodeURIComponent(params[property]));
+      }
+    return queryString.join('&');
+  },
+
+  getSelected: function (fieldName) {
+    var i;
+    var fields = document.getElementsByName(fieldName);
+    var selectedFields = [];
+    for (i = 0; i < fields.length; i++) {
+      if (fields[i].checked === true) {
+        selectedFields.push(fields[i].value);
+      }
+    }
+    return selectedFields.join(', ');
+  },
+
   render: function () {
     return(
-      <div className = "jumbotron col-sm-6 col-sm-offset-3 text-center" style = {styles.transparentBg}>
-        <h2>{this.props.route.header}</h2>
-        <div className="col-sm-12">
-          <form>
-            <div className="form-group">
-              <input
-                className='form-control'
-                placeholder='Name'
-                type='text' />
-            </div>
-            <div className="form-group">
-              <input
-                className='form-control'
-                placeholder='E-mail'
-                type='text' />
-            </div>
-            <div className="form-group">
-              <input
-                className='form-control'
-                placeholder='Subject'
-                type='text' />
-            </div>
-            <div className="form-group">
-              <textarea
-                className='form-control'
-                placeholder='Message'
-                rows =
-                 '5'
-                type='text' />
-            </div>
-            <div className="form-group col-sm-4 col-sm-offset-4">
-              <button
-                className="btn btn-block btn-success"
-                type="submit">
-                  Submit
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+     <Contact
+     onSubmitUser = {this.handleSubmit}
+     sendFormData = {this.sendFormData}
+     requestBuildQueryString = {this.requestBuildQueryString}
+     getSelected = {this. getSelected}
+     header = {this.props.route.header}
+     message = {this.state.message}
+     />
     )
   }
 });

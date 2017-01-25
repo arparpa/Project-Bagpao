@@ -10,9 +10,6 @@ var Login = require('../components/Login');
 var Trips = require('../containers/TripsCon');
 var Places = require('../containers/PlacesCon');
 var Contact = require('../containers/ContactCon');
-var Tripsearch = require('../containers/TripsearchCon');
-
-
 
 var routes = (
   <Router history = {browserHistory}>
