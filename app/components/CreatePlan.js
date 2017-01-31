@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styles from '../styles';
 
+class CreatePlan  extends Component {
+  constructor(props) {
+      super(props);
 
+      this.state = {term: ''};
+    }
 
-var CreatePlan = React.createClass({
-  render: function () {
+  render() {
+
     return (
 <div className="container" style={styles.container}>
 
@@ -12,7 +17,10 @@ var CreatePlan = React.createClass({
 
   <div className="col-md-4" >
     <h3 style={styles.left}>From</h3>
-    <input type="text" className="form-control" placeholder="Enter your origin"/>
+    <input type="text" className="form-control" placeholder="Enter your origin"
+      value={this.state.term}
+      onChange= {event => this.setState({term: event.target.value}) }/>
+
   </div>
 
   <div className="col-md-4" >
@@ -45,8 +53,7 @@ var CreatePlan = React.createClass({
 </div>
 
 
-    )
+    );
   }
-});
-
-module.exports = CreatePlan;
+}
+export default CreatePlan;

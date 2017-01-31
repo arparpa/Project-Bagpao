@@ -1,50 +1,35 @@
-var React = require('react');
-var styles = require('../styles');
+import React, {Component} from 'react';
+import ReactRouter from 'react-router';
+import styles from '../styles';
+import LoginForm from '../components/LoginForm';
 
-var Login = React.createClass({
-  render: function () {
+class Login extends Component {
+  render()  {
     return(
-      <div className = "jumbotron col-sm-6 col-sm-offset-3 text-center" style = {styles.transparentBg}>
-        <h2>{this.props.route.header}</h2>
-        <div className="col-sm-12">
-          <form>
-            <div className="form-group">
-              <input
-                className='form-control'
-                placeholder='Username'
-                type='text' />
-            </div>
-            <div className="form-group">
-              <input
-                className='form-control'
-                placeholder='Password'
-                type='text' />
-            </div>
-            <div className="form-group">
-              <input
-                className='form-control'
-                placeholder='Repassword'
-                type='text' />
-            </div>
-            <div className="form-group">
-              <input
-                className='form-control'
-                placeholder='Email'
-                type='text' />
-            </div>
 
-            <div className="form-group col-sm-4 col-sm-offset-4">
-              <button
-                className="btn btn-block btn-success"
-                type="submit">
-                  Submit
-              </button>
-            </div>
-          </form>
+<div className="col-md-6 col-md-offset-3">
+
+      <ul className="nav nav-tabs nav-justified">
+          <li className="active"><a data-toggle="tab" href="#login"><h3>Login</h3></a></li>
+          <li><a data-toggle="tab" href="#signup"><h3>Sign Up</h3></a></li>
+      </ul>
+
+
+        <div className="tab-content">
+          <div id="login" className="tab-pane fade in active">
+          <center> <LoginForm/></center>
+          </div>
+
+          <div id="signup" className="tab-pane fade">
+            <center>Ut enim ad minim veniam, quis nostrud exercitation ul consequat.</center>
+          </div>
         </div>
-      </div>
-    )
+</div>
+
+
+
+    );
   }
-});
+}
 
 module.exports = Login;

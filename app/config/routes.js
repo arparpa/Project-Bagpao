@@ -21,6 +21,7 @@ var routes = (
       <Route path = 'places' header = 'Places' component = {Places}/>
       <Route path = 'contact' header = 'Contact Us' component = {Contact}/>
       <Route path = 'login' header = 'Login/Sign Up' component = {Login}/>
+
     </Route>
   </Router>
 );

@@ -9,8 +9,6 @@ var Main = React.createClass({
       <div>
 
       <Nav/>
-  <h1 className="text-center">BagPao Travel</h1>
-
       {this.props.children}
 
 

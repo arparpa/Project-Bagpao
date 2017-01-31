@@ -15,13 +15,23 @@ var styles = {
 		background: '#D0D3D4',
 		padding: '10px'
 
-
-
 	},
 
 	left: {
 		textAlign: 'left'
-}
+	},
+
+	header_menu: {
+		color: 'black',
+		fontFamily: 'sans-serif',
+		margin: '10px'
+	},
+
+	img_header: {
+		maxWidth: '100%',
+		height: 'auto'
+	}
+
 };
 
 module.exports = styles;
